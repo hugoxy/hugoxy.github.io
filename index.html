@@ -110,7 +110,61 @@
         .contact-section {
             background: rgba(255, 255, 255, 0.9);
             text-align: center;
-            padding: 40px;
+            padding: 60px 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        .contact-item .contact-text {
+            text-align: left;
+        }
+
+        .contact-item .contact-label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .contact-item .contact-value {
+            font-size: 1.1em;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
         }
 
         .mdl-layout__header {
@@ -143,6 +197,49 @@
 
         .email-link:hover {
             color: var(--accent-color);
+        }
+
+        .mdl-mini-footer {
+            padding: 16px;
+            background-color: var(--primary-color);
+        }
+
+        .mdl-mini-footer__left-section,
+        .mdl-mini-footer__right-section {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .mdl-mini-footer__left-section {
+            margin-right: 40px;
+        }
+
+        .mdl-mini-footer__link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .mdl-mini-footer__link-list li {
+            display: inline-block;
+            margin-right: 24px;
+        }
+
+        .company-info {
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+        }
+
+        .company-info strong {
+            color: white;
+            font-weight: 500;
+        }
+
+        .mdl-logo {
+            display: inline-block;
+            margin-right: 24px;
         }
     </style>
 </head>
@@ -257,9 +354,39 @@
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--12-col">
                         <h2 class="mdl-typography--display-1 mdl-typography--text-center">Entre em Contato</h2>
-                        <p class="mdl-typography--headline">
-                            <a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a>
-                        </p>
+                        <p class="mdl-typography--headline mdl-typography--font-thin">Estamos prontos para transformar sua ideia em realidade</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="material-icons">email</i>
+                                <div class="contact-text">
+                                    <div class="contact-label">E-mail</div>
+                                    <div class="contact-value">
+                                        <a href="mailto:victor@gonti.com.br">victor@gonti.com.br</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="material-icons">location_on</i>
+                                <div class="contact-text">
+                                    <div class="contact-label">Endereço</div>
+                                    <div class="contact-value">WeWork Sala Comercial & Coworking</div>
+                                    <div class="contact-value">Rua Sergipe, 1440 - Savassi</div>
+                                    <div class="contact-value">Belo Horizonte - MG</div>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <i class="material-icons">business</i>
+                                <div class="contact-text">
+                                    <div class="contact-label">CNPJ</div>
+                                    <div class="contact-value">54.565.683/0001-53</div>
+                                    <div class="contact-value">Gontijo Tecnologia da Informação</div>
+                                    <div class="contact-value">Nome Fantasia: GonTI</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -270,11 +397,14 @@
                     <div class="mdl-logo">GonTI</div>
                     <ul class="mdl-mini-footer__link-list">
                         <li>Soluções em Desenvolvimento de Software</li>
+                        <li><a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a></li>
                     </ul>
                 </div>
                 <div class="mdl-mini-footer__right-section">
                     <ul class="mdl-mini-footer__link-list">
-                        <li><a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a></li>
+                        <li class="company-info">
+                            <strong>WeWork Sala Comercial & Coworking</strong> - Rua Sergipe, 1440 - Savassi, Belo Horizonte - MG - Gontijo Tecnologia da Informação (GonTI) - CNPJ: 54.565.683/0001-53
+                        </li>
                     </ul>
                 </div>
             </footer>
