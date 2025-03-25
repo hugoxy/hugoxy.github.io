@@ -1,9 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GonTI - Soluções em Desenvolvimento de Software. Especialistas em Chatbots e APIs Backend.">
+    <meta name="keywords" content="chatbots, desenvolvimento de software, APIs, backend, GonTI">
+    <title>GonTI - Soluções em Desenvolvimento de Software</title>
+    
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <style>
+        :root {
+            --primary-color: #3f51b5;
+            --accent-color: #ff4081;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-image: url('https://i.imgur.com/5uDOtjl.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), #5c6bc0);
+            color: white;
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.imgur.com/5uDOtjl.jpeg');
+            opacity: 0.1;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .service-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .portfolio-item {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-item img {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .mdl-layout__header {
+            background-color: var(--primary-color);
+        }
+
+        .mdl-button--raised.mdl-button--colored {
+            background-color: var(--accent-color);
+        }
+
+        .mdl-button--raised.mdl-button--colored:hover {
+            background-color: #f50057;
+        }
+
+        .mdl-card__title {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .mdl-card__title-text {
+            color: white;
+        }
+
+        .email-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .email-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">GonTI</span>
+                <div class="mdl-layout-spacer"></div>
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="#sobre">Sobre</a>
+                    <a class="mdl-navigation__link" href="#servicos">Serviços</a>
+                    <a class="mdl-navigation__link" href="#contato">Contato</a>
+                </nav>
+            </div>
+        </header>
+
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">GonTI</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#sobre">Sobre</a>
+                <a class="mdl-navigation__link" href="#servicos">Serviços</a>
+                <a class="mdl-navigation__link" href="#contato">Contato</a>
+            </nav>
+        </div>
+
+        <main class="mdl-layout__content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <h1 class="mdl-typography--display-2 mdl-typography--font-thin">Transformando ideias em realidade digital</h1>
+                        <p class="mdl-typography--headline mdl-typography--font-thin">Soluções especializadas em Chatbots e APIs Backend para impulsionar seu negócio</p>
+                        <a href="#contato" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                            Entre em Contato
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sobre Section -->
+            <section id="sobre" class="section">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Sobre Nós</h2>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <p class="mdl-typography--headline mdl-typography--font-thin">A GonTI é uma empresa especializada em desenvolvimento de software, focada em criar soluções inovadoras e eficientes para nossos clientes.</p>
+                        <p class="mdl-typography--body-1">Com expertise em Chatbots e APIs Backend, oferecemos serviços personalizados que atendem às necessidades específicas de cada projeto.</p>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Serviços Section -->
+            <section id="servicos" class="section">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Nossos Serviços</h2>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div class="mdl-card mdl-shadow--2dp service-card">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">Chatbots</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <i class="material-icons">chat</i>
+                                <p>Desenvolvimento de chatbots inteligentes para atendimento ao cliente, automação de processos e interação com usuários.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div class="mdl-card mdl-shadow--2dp service-card">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">APIs Backend</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <i class="material-icons">api</i>
+                                <p>Desenvolvimento de APIs robustas e escaláveis para integração de sistemas e serviços.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfólio Section 
+            <section id="portfolio" class="section">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Portfólio</h2>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="portfolio-item mdl-shadow--2dp">
+                            <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="portfolio-item mdl-shadow--2dp">
+                            <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <div class="portfolio-item mdl-shadow--2dp">
+                            <img src="https://via.placeholder.com/400x300" alt="Projeto 3">
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+            <!-- Contato Section -->
+            <section id="contato" class="section contact-section">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Entre em Contato</h2>
+                        <p class="mdl-typography--headline">
+                            <a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">GonTI</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li>Soluções em Desenvolvimento de Software</li>
+                    </ul>
+                </div>
+                <div class="mdl-mini-footer__right-section">
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+    </div>
 </body>
 </html>
