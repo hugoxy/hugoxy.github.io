@@ -1,81 +1,69 @@
-# GonTI - Site Institucional
+# GonTI — Site Institucional
 
-Site institucional da GonTI (Gontijo Tecnologia da Informação), desenvolvido com Material Design Lite e otimizado para GitHub Pages.
+Site institucional estático da GonTI (Gontijo Tecnologia da Informação), moderno, responsivo e otimizado para GitHub Pages. Construído com HTML5, CSS3 e JavaScript vanilla (sem build).
 
-## 🚀 Sobre o Projeto
+## 🚀 Destaques
 
-Este é o site institucional da GonTI, uma empresa especializada em desenvolvimento de software, focada em soluções inovadoras em Chatbots e APIs Backend. O site foi desenvolvido utilizando tecnologias modernas e boas práticas de desenvolvimento web.
+- **Design system** com variáveis CSS, grid/flex, glassmorphism e gradientes
+- **Responsivo** para desktop, tablet e mobile
+- **Tema claro/escuro** com persistência
+- **SEO e performance**: HTML semântico, fontes otimizadas, lazy loading, JS leve
+- **Acessibilidade**: contraste, navegação consistente, âncoras e landmarks
 
-## 🛠️ Tecnologias Utilizadas
-
-- HTML5
-- CSS3
-- Material Design Lite
-- Google Fonts
-- Material Icons
-
-## 📋 Características
-
-- Design responsivo
-- Interface moderna e intuitiva
-- Otimizado para SEO
-- Compatível com GitHub Pages
-- Seções principais:
-  - Hero Section
-  - Sobre
-  - Serviços
-  - Contato
-
-## 🎨 Estrutura do Projeto
+## 🗂️ Estrutura
 
 ```
 hugoxy.github.io/
 ├── index.html
-├── README.md
-└── assets/
-    └── images/
+├── assets/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── main.js
+│   └── images/
+│       ├── GonTI_NoBG.png
+│       └── GonTI_NoBG_White.png
+├── CNAME
+├── LICENSE
+└── README.md
 ```
 
-## 🔧 Como Executar
+## 🔧 Executar localmente
 
 1. Clone o repositório:
 ```bash
 git clone https://github.com/hugoxy/hugoxy.github.io.git
+cd hugoxy.github.io
 ```
+2. Abra `index.html` diretamente no navegador ou use um servidor local simples:
+```bash
+# Python 3
+python -m http.server 8080
+# ou Node
+npx serve -l 8080 .
+```
+3. Acesse `http://localhost:8080`.
 
-2. Abra o arquivo `index.html` em seu navegador ou utilize um servidor local.
+## 🌐 Deploy no GitHub Pages
 
-## 📱 Responsividade
+Este repositório já está no formato suportado pelo GitHub Pages (root do repositório).
 
-O site é totalmente responsivo e se adapta aos seguintes dispositivos:
-- Desktop
-- Tablet
-- Mobile
+- Commits na branch `main` são publicados automaticamente.
+- O arquivo `CNAME` aponta o domínio para `gonti.com.br`.
 
-## 🌐 Deploy
+Passos para configurar do zero (se necessário):
+- Vá em Settings → Pages → Branch: `main` / `/root` → Save
+- Em Settings → Pages → Custom domain: `gonti.com.br` (verifique DNS com um registro CNAME apontando para `hugoxy.github.io`)
 
-O site está hospedado no GitHub Pages e pode ser acessado através do domínio: [hugoxy.github.io](https://hugoxy.github.io)
+## 🧩 Customização rápida
+
+- Paleta de cores: edite os tokens em `:root` e `[data-theme="dark"]` em `assets/css/styles.css`.
+- Seções/Conteúdo: edite o HTML semântico em `index.html`.
+- Interações: ajuste handlers em `assets/js/main.js` (menu, tema, animações).
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 🤝 Contribuições
-
-Contribuições são sempre bem-vindas! Para contribuir:
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📝 Notas de Desenvolvimento
-
-- O site utiliza Material Design Lite para garantir uma experiência consistente
-- As cores principais são definidas através de variáveis CSS
-- O layout é otimizado para performance e SEO
-- Todas as imagens são otimizadas para carregamento rápido
+MIT — veja [`LICENSE`](LICENSE).
 
 ---
 Desenvolvido com ❤️ por GonTI
