@@ -1,722 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<link rel="icon" sizes="192x192" href="assets/images/GonTI_NoBG.png">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="GonTI - Soluções em Desenvolvimento de Software. Especialistas em Chatbots, Voicebots e APIs Backend.">
-    <meta name="keywords" content="chatbots, voicebots, desenvolvimento de software, APIs, backend, GonTI">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="GonTI — Soluções em desenvolvimento de software. Especialistas em Chatbots, Voicebots e APIs Backend." />
+    <meta name="keywords" content="GonTI, chatbots, voicebots, APIs, backend, desenvolvimento de software" />
+    <meta name="theme-color" content="#6c5ce7" />
+    <link rel="icon" href="assets/images/GonTI_NoBG.png" sizes="192x192" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    </noscript>
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <title>GonTI | Soluções em Desenvolvimento de Software</title>
-
-    <!-- Material Design Lite -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
-    <style>
-        :root {
-            --primary-color: #3f51b5;
-            --accent-color: #ff4081;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: -1;
-        }
-
-        .hero-section {
-            background: linear-gradient(135deg, var(--primary-color), #5c6bc0);
-            color: white;
-            padding: 120px 0 80px;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://i.imgur.com/5uDOtjl.jpeg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            z-index: 0;
-        }
-
-        .hero-section .mdl-grid {
-            position: relative;
-            z-index: 1;
-        }
-
-        .section {
-            padding: 80px 0;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 16px;
-            overflow: hidden;
-            background: white;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-card .mdl-card__title {
-            background: linear-gradient(135deg, var(--primary-color), #5c6bc0);
-            padding: 30px 24px;
-            height: auto;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            width: 100%;
-        }
-
-        .service-card .mdl-card__title i {
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: white;
-            display: block;
-        }
-
-        .service-card .mdl-card__title-text {
-            color: white;
-            font-size: 24px;
-            margin-top: 12px;
-            font-weight: 500;
-            text-align: center;
-            width: 100%;
-            display: block;
-        }
-
-        .service-card .mdl-card__supporting-text {
-            padding: 32px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .service-card .mdl-card__supporting-text i {
-            font-size: 48px;
-            color: var(--primary-color);
-            margin-bottom: 24px;
-        }
-
-        .service-card .mdl-card__supporting-text p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #666;
-            margin: 0;
-        }
-
-        .service-features {
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid #eee;
-            width: 100%;
-        }
-
-        .service-features ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .service-features li {
-            background: #f5f5f5;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--primary-color);
-        }
-
-        .services-section {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
-            padding: 60px 20px;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 40px;
-            max-width: 800px;
-            width: 100%;
-        }
-
-        .services-header h2 {
-            margin-bottom: 16px;
-            font-size: 2em;
-            color: var(--primary-color);
-        }
-
-        .services-header p {
-            color: #666;
-            font-size: 1.1em;
-            line-height: 1.5;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 0 20px;
-        }
-
-        .service-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            background: white;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            margin: 0 auto;
-            max-width: 350px;
-        }
-
-        .service-card .mdl-card__title {
-            background: linear-gradient(135deg, var(--primary-color), #5c6bc0);
-            padding: 30px 24px;
-            height: auto;
-            min-height: 140px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .service-card .mdl-card__title i {
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: white;
-        }
-
-        .service-card .mdl-card__title-text {
-            color: white;
-            font-size: 24px;
-            margin-top: 12px;
-            font-weight: 500;
-        }
-
-        .service-card .mdl-card__supporting-text {
-            padding: 30px 24px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .service-card .mdl-card__supporting-text p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: #666;
-            margin: 0 0 24px 0;
-            max-width: 280px;
-        }
-
-        .service-features {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            width: 100%;
-        }
-
-        .service-features ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .service-features li {
-            background: #f5f5f5;
-            padding: 8px 16px;
-            border-radius: 16px;
-            font-size: 13px;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .portfolio-item {
-            margin-bottom: 30px;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .portfolio-item img {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .contact-section {
-            background: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            padding: 60px 40px;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-item i {
-            font-size: 32px;
-            color: var(--primary-color);
-        }
-
-        .contact-item .contact-text {
-            text-align: left;
-        }
-
-        .contact-item .contact-label {
-            font-size: 0.9em;
-            color: #666;
-            margin-bottom: 4px;
-        }
-
-        .contact-item .contact-value {
-            font-size: 1.1em;
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .contact-item a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-color);
-        }
-
-        .mdl-layout__header {
-            background-color: var(--primary-color);
-        }
-
-        .mdl-button--raised.mdl-button--colored {
-            background-color: var(--accent-color);
-        }
-
-        .mdl-button--raised.mdl-button--colored:hover {
-            background-color: #f50057;
-        }
-
-        .mdl-card__title {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-        }
-
-        .mdl-card__title-text {
-            text-align: center;
-            width: 100%;
-            display: block;
-        }
-
-        .email-link {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-
-        .email-link:hover {
-            color: var(--accent-color);
-        }
-
-        .mdl-mini-footer {
-            padding: 16px;
-            background-color: var(--primary-color);
-        }
-
-        .mdl-mini-footer__left-section,
-        .mdl-mini-footer__right-section {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .mdl-mini-footer__left-section {
-            margin-right: 40px;
-        }
-
-        .mdl-mini-footer__link-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: inline-block;
-        }
-
-        .mdl-mini-footer__link-list li {
-            display: inline-block;
-            margin-right: 24px;
-        }
-
-        .company-info {
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-        }
-
-        .company-info strong {
-            color: white;
-            font-weight: 500;
-        }
-
-        .mdl-logo {
-            display: inline-block;
-            margin-right: 24px;
-        }
-
-        .mdl-layout-title {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .header-logo {
-            height: 32px;
-            width: auto;
-            vertical-align: middle;
-        }
-
-        .drawer-logo {
-            height: 24px;
-            width: auto;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        .hero-logo {
-            width: 120px;
-            height: auto;
-            margin-bottom: 0;
-            filter: brightness(0) invert(1);
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .about-logo {
-            width: 80px;
-            height: auto;
-            margin-bottom: 20px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .footer-logo {
-            height: 24px;
-            width: auto;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
-
-        .mdl-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mdl-cell--6-col {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">
-                    <img src="assets/images/GonTI_NoBG_White.png" alt="GonTI Logo" class="header-logo">
-                    GonTI
-                </span>
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="#sobre">Sobre</a>
-                    <a class="mdl-navigation__link" href="#servicos">Serviços</a>
-                    <a class="mdl-navigation__link" href="#contato">Contato</a>
-                </nav>
-            </div>
-        </header>
-
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">
-                <img src="assets/images/GonTI_NoBG.png" alt="GonTI Logo" class="drawer-logo">
-                GonTI
-            </span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#sobre">Sobre</a>
-                <a class="mdl-navigation__link" href="#servicos">Serviços</a>
-                <a class="mdl-navigation__link" href="#contato">Contato</a>
-            </nav>
+  </head>
+  <body>
+    <header class="nav" role="banner">
+      <div class="container nav__inner">
+        <a href="#inicio" class="brand" aria-label="GonTI">
+          <img 
+            class="brand__logo" 
+            src="assets/images/GonTI_NoBG.png" 
+            data-src-light="assets/images/GonTI_NoBG.png"
+            data-src-dark="assets/images/GonTI_NoBG_White.png"
+            alt="Logo GonTI" 
+            width="32" 
+            height="32" 
+          />
+          GonTI
+        </a>
+        <script>
+          // Função para trocar os logos conforme o tema
+          (function() {
+            function updateLogos() {
+              // Atualiza o logo do header
+              var imgBrand = document.querySelector('.brand__logo');
+              if (imgBrand) {
+                var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                var srcBrand = isDark ? imgBrand.getAttribute('data-src-dark') : imgBrand.getAttribute('data-src-light');
+                if (imgBrand.src !== location.origin + '/' + srcBrand && imgBrand.src !== srcBrand) {
+                  imgBrand.src = srcBrand;
+                }
+              }
+              // Atualiza o logo do hero
+              var imgHero = document.querySelector('.hero__logo');
+              if (imgHero) {
+                var srcHero = isDark ? imgHero.getAttribute('data-src-dark') : imgHero.getAttribute('data-src-light');
+                if (imgHero.src !== location.origin + '/' + srcHero && imgHero.src !== srcHero) {
+                  imgHero.src = srcHero;
+                }
+              }
+            }
+
+            // Atualiza ao carregar
+            document.addEventListener('DOMContentLoaded', updateLogos);
+
+            // Observa mudanças no atributo data-theme
+            var observer = new MutationObserver(updateLogos);
+            observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+            // Também atualiza ao trocar tema via JS (caso o script rode antes do DOMContentLoaded)
+            updateLogos();
+          })();
+        </script>
+        <nav class="nav__links" id="nav-links" aria-label="Navegação primária">
+          <a class="nav__link" href="#sobre">Sobre</a>
+          <a class="nav__link" href="#servicos">Serviços</a>
+          <a class="nav__link" href="#contato">Contato</a>
+        </nav>
+        <div class="nav__actions">
+          <button class="btn-icon" data-action="toggle-theme" aria-label="Alternar tema" title="Tema claro/escuro">
+            <i data-feather="moon"></i>
+          </button>
+          <button class="btn-icon nav__toggle" data-action="toggle-menu" aria-label="Abrir/fechar menu">
+            <i data-feather="menu"></i>
+          </button>
         </div>
+      </div>
+    </header>
 
-        <main class="mdl-layout__content">
-            <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--6-col">
-                        <div class="hero-content">
-                            <img src="assets/images/GonTI_NoBG_White.png" alt="GonTI Logo" class="hero-logo">
-                            <div class="hero-text">
-                                <h1 class="mdl-typography--display-2 mdl-typography--font-thin">Transformando ideias em realidade digital</h1>
-                                <p class="mdl-typography--headline mdl-typography--font-thin">Soluções especializadas em
-                                    Chatbots e APIs Backend para impulsionar seu negócio</p>
-                                <a href="#contato"
-                                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-                                    Entre em Contato
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <main id="inicio">
+      <!-- Hero -->
+      <section class="hero section">
+        <div class="container grid grid--2 hero__grid">
+          <div class="stack reveal">
+            <h1 class="hero__title">Transformando ideias em experiências digitais</h1>
+            <p class="hero__subtitle">Especialistas em Chatbots, Voicebots e APIs Backend para acelerar o crescimento do seu negócio com tecnologia de ponta.</p>
+            <div class="stack" style="grid-auto-rows: min-content; grid-row-gap: 12px;">
+              <a href="#contato" class="cta cta--primary" aria-label="Fale com a GonTI">
+                <i data-feather="message-circle"></i>
+                Fale com a gente
+              </a>
+              <div class="pill" aria-hidden="true">
+                <i data-feather="zap"></i>
+                Atendimento sob medida • Foco em resultados
+              </div>
+            </div>
+          </div>
+          <div class="hero__media reveal">
+            <div class="glass-card">
+              <img class="hero__logo" src="assets/images/GonTI_NoBG_White.png" alt="Marca GonTI" width="200" height="200" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <!-- Sobre Section -->
-            <section id="sobre" class="section">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Sobre Nós</h2>
-                    </div>
-                    <div class="mdl-cell mdl-cell--6-col">
-                        <p class="mdl-typography--headline mdl-typography--font-thin">A GonTI é uma empresa
-                            especializada em desenvolvimento de software, focada em criar soluções inovadoras e
-                            eficientes para nossos clientes.</p>
-                        <p class="mdl-typography--body-1">Com expertise em Chatbots e APIs Backend, oferecemos serviços
-                            personalizados que atendem às necessidades específicas de cada projeto.</p>
-                    </div>
+      <!-- Sobre -->
+      <section id="sobre" class="section section--alt">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="section__title">Sobre a GonTI</h2>
+            <p class="section__subtitle">Criamos produtos e integrações que elevam a experiência do usuário e a eficiência operacional, com foco em qualidade, performance e escalabilidade.</p>
+          </header>
+          <div class="grid grid--3 services__grid">
+            <article class="card reveal" aria-labelledby="val-1">
+              <h3 class="card__title" id="val-1"><i data-feather="shield"></i>Qualidade e Segurança</h3>
+              <p class="card__text">Processos maduros, testes, observabilidade e boas práticas de segurança desde o primeiro commit.</p>
+            </article>
+            <article class="card reveal" aria-labelledby="val-2">
+              <h3 class="card__title" id="val-2"><i data-feather="activity"></i>Performance</h3>
+              <p class="card__text">Backends leves e eficientes, com latência reduzida e custos sob controle.</p>
+            </article>
+            <article class="card reveal" aria-labelledby="val-3">
+              <h3 class="card__title" id="val-3"><i data-feather="users"></i>Parceria</h3>
+              <p class="card__text">Atuação próxima ao cliente, entregas iterativas e foco em impacto de negócio.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-                </div>
-            </section>
+      <!-- Serviços -->
+      <section id="servicos" class="section">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="section__title">Nossos Serviços</h2>
+            <p class="section__subtitle">Soluções sob medida para acelerar seus resultados.</p>
+          </header>
+          <div class="grid grid--3 services__grid">
+            <article class="card reveal">
+              <h3 class="card__title"><i data-feather="message-square"></i>Chatbots e Voicebots</h3>
+              <p class="card__text">Assistentes inteligentes para atendimento, suporte e automação de rotinas.</p>
+              <div class="feature-list" aria-label="Funcionalidades">
+                <span class="feature-list__item">24/7</span>
+                <span class="feature-list__item">NLU</span>
+                <span class="feature-list__item">Multicanal</span>
+                <span class="feature-list__item">Analytics</span>
+              </div>
+            </article>
+            <article class="card reveal">
+              <h3 class="card__title"><i data-feather="server"></i>APIs Backend</h3>
+              <p class="card__text">Integrações robustas e escaláveis, com documentação clara e segurança por padrão.</p>
+              <div class="feature-list">
+                <span class="feature-list__item">Alta performance</span>
+                <span class="feature-list__item">Escalabilidade</span>
+                <span class="feature-list__item">Observabilidade</span>
+                <span class="feature-list__item">Segurança</span>
+              </div>
+            </article>
+            <article class="card reveal">
+              <h3 class="card__title"><i data-feather="sliders"></i>Consultoria Técnica</h3>
+              <p class="card__text">Diagnóstico, arquitetura, otimizações e apoio na adoção de boas práticas.</p>
+              <div class="feature-list">
+                <span class="feature-list__item">Arquitetura</span>
+                <span class="feature-list__item">Cloud</span>
+                <span class="feature-list__item">DevOps</span>
+                <span class="feature-list__item">Treinamentos</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-            <!-- Serviços Section -->
-            <section id="servicos" class="section services-section">
-                <div class="mdl-cell mdl-cell--12-col">
-                    <h2 class="mdl-typography--display-1 mdl-typography--text-center">Nossos Serviços</h2>
-                    <p class="mdl-typography--headline mdl-typography--font-thin">Soluções tecnológicas que impulsionam
-                        seu negócio.</p>
-                    <p class="mdl-typography--body-1">Nossa equipe de especialistas está pronta para criar soluções
-                        personalizadas que atendam às necessidades específicas de cada cliente.</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <i class="material-icons">chat</i>
-                            <h2 class="mdl-card__title-text">Chatbots</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <p>Desenvolvimento de chatbots inteligentes para atendimento ao cliente, automação de
-                                processos e interação com usuários.</p>
-                            <div class="service-features">
-                                <ul>
-                                    <li>Atendimento 24/7</li>
-                                    <li>Automação Inteligente</li>
-                                    <li>Integração Multiplataforma</li>
-                                    <li>Análise de Dados</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="service-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <i class="material-icons">api</i>
-                            <h2 class="mdl-card__title-text">APIs Backend</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <p>Desenvolvimento de APIs robustas e escaláveis para integração de sistemas e serviços.</p>
-                            <div class="service-features">
-                                <ul>
-                                    <li>Alta Performance</li>
-                                    <li>Segurança Avançada</li>
-                                    <li>Escalabilidade</li>
-                                    <li>Documentação Completa</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+      <!-- Contato -->
+      <section id="contato" class="section section--alt contact">
+        <div class="container">
+          <header class="section__header reveal">
+            <h2 class="section__title">Entre em Contato</h2>
+            <p class="section__subtitle">Vamos tirar sua ideia do papel? Fale com a gente.</p>
+          </header>
+          <div class="contact__items">
+            <div class="contact-item reveal" role="group" aria-label="Contato por e-mail">
+              <i data-feather="mail"></i>
+              <div>
+                <div class="contact-item__label">E-mail</div>
+                <div class="contact-item__value"><a href="mailto:victor@gonti.com.br">victor@gonti.com.br</a></div>
+              </div>
+            </div>
+            <div class="contact-item reveal" role="group" aria-label="Endereço">
+              <i data-feather="map-pin"></i>
+              <div>
+                <div class="contact-item__label">Endereço</div>
+                <div class="contact-item__value">WeWork Sala Comercial & Coworking</div>
+                <div class="contact-item__value">Rua Sergipe, 1440 - Savassi</div>
+                <div class="contact-item__value">Belo Horizonte - MG</div>
+              </div>
+            </div>
+            <div class="contact-item reveal" role="group" aria-label="Dados da empresa">
+              <i data-feather="briefcase"></i>
+              <div>
+                <div class="contact-item__label">CNPJ</div>
+                <div class="contact-item__value">60.794.533/0001-14</div>
+                <div class="contact-item__value">GonTI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-            <!-- Portfólio Section 
-            <section id="portfolio" class="section">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Portfólio</h2>
-                    </div>
-                    <div class="mdl-cell mdl-cell--4-col">
-                        <div class="portfolio-item mdl-shadow--2dp">
-                            <img src="https://via.placeholder.com/400x300" alt="Projeto 1">
-                        </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--4-col">
-                        <div class="portfolio-item mdl-shadow--2dp">
-                            <img src="https://via.placeholder.com/400x300" alt="Projeto 2">
-                        </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--4-col">
-                        <div class="portfolio-item mdl-shadow--2dp">
-                            <img src="https://via.placeholder.com/400x300" alt="Projeto 3">
-                        </div>
-                    </div>
-                </div>
-            </section>-->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer__inner">
+        <span class="footer__brand">
+          <img class="footer__logo" src="assets/images/GonTI_NoBG_White.png" alt="Logo GonTI" width="24" height="24" />
+          GonTI — Soluções em Desenvolvimento de Software
+        </span>
+        <span class="footer__meta">© <span id="year"></span> GonTI. Todos os direitos reservados.</span>
+      </div>
+    </footer>
 
-            <!-- Contato Section -->
-            <section id="contato" class="section contact-section">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col">
-                        <h2 class="mdl-typography--display-1 mdl-typography--text-center">Entre em Contato</h2>
-                        <p class="mdl-typography--headline mdl-typography--font-thin">Estamos prontos para transformar
-                            sua ideia em realidade</p>
-
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="material-icons">email</i>
-                                <div class="contact-text">
-                                    <div class="contact-label">E-mail</div>
-                                    <div class="contact-value">
-                                        <a href="mailto:victor@gonti.com.br">victor@gonti.com.br</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <i class="material-icons">location_on</i>
-                                <div class="contact-text">
-                                    <div class="contact-label">Endereço</div>
-                                    <div class="contact-value">WeWork Sala Comercial & Coworking</div>
-                                    <div class="contact-value">Rua Sergipe, 1440 - Savassi</div>
-                                    <div class="contact-value">Belo Horizonte - MG</div>
-                                </div>
-                            </div>
-
-                            <div class="contact-item">
-                                <i class="material-icons">business</i>
-                                <div class="contact-text">
-                                    <div class="contact-label">CNPJ</div>
-                                    <div class="contact-value">60.794.533/0001-14</div>
-                                    <div class="contact-value">GonTI</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Footer -->
-            <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">
-                        <img src="assets/images/GonTI_NoBG_White.png" alt="GonTI Logo" class="footer-logo">
-                        GonTI
-                    </div>
-                    <ul class="mdl-mini-footer__link-list">
-                        <li>Soluções em Desenvolvimento de Software</li>
-                        <li><a href="mailto:victor@gonti.com.br" class="email-link">victor@gonti.com.br</a></li>
-                    </ul>
-                </div>
-                <div class="mdl-mini-footer__right-section">
-                    <ul class="mdl-mini-footer__link-list">
-                        <li class="company-info">
-                            <strong>WeWork Sala Comercial & Coworking</strong> - Rua Sergipe, 1440 - Savassi, Belo
-                            Horizonte - MG - GonTI - CNPJ: 60.794.533/0001-14
-                        </li>
-                    </ul>
-                </div>
-            </footer>
-        </main>
-    </div>
-</body>
-
+    <!-- Dependências leves -->
+    <script src="https://unpkg.com/feather-icons" defer></script>
+    <script>
+      // ano dinâmico sem bloquear render
+      document.addEventListener('DOMContentLoaded', function(){
+        var y = document.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+      });
+    </script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
 </html>
