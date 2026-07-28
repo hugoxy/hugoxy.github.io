@@ -1,2 +1,108 @@
-.vs
+# ==========================================================
+# Segredos e credenciais — REPOSITÓRIO PÚBLICO
+# Nada aqui pode vazar. Em caso de dúvida, ignore.
+# ==========================================================
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.keystore
+id_rsa
+id_ed25519
+secrets.json
+credentials.json
+*.credentials
+appsettings.Development.json
+appsettings.Local.json
+
+# ==========================================================
+# Configuração local de ferramentas (por máquina, não do projeto)
+# ==========================================================
+CLAUDE.md
+.claude/settings.local.json
+.vscode/
+.vs/
+.idea/
+*.suo
+*.user
+*.sln.docstates
+*.swp
+*.swo
+*~
+
+# ==========================================================
+# Lixo de sistema operacional
+# ==========================================================
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+# Linux
+.directory
+.Trash-*
+
+# ==========================================================
+# Node — o projeto é estático e NÃO tem build.
+# Se estes arquivos aparecerem, alguém rodou npm por engano.
+# ==========================================================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+npm-debug.log*
+yarn-error.log*
+.npm/
+
+# ==========================================================
+# Logs e temporários
+# ==========================================================
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+
+# ==========================================================
+# Artefatos de geradores estáticos
+# (não usados aqui, mas evitam publicação acidental)
+# ==========================================================
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+dist/
+build/
+.cache/
+
+# ==========================================================
+# Arquivos comprimidos e fontes de design
+# (o site serve só o resultado exportado)
+# ==========================================================
+*.zip
+*.rar
+*.7z
+*.psd
+*.ai
+*.sketch
+*.fig
+
+# ==========================================================
+# NÃO ignorar — necessários para o GitHub Pages funcionar
+# ==========================================================
+!.nojekyll
+!CNAME
