@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página não encontrada — GonTI</title>
+    <meta name="description" content="A página que você procurou não existe ou foi movida." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#080a12" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/images/GonTI_NoBG.png" sizes="any" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gonti.theme');
+          var dark = saved ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+
+    <style>
+      .nf {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 2rem var(--gutter);
+      }
+      .nf__code {
+        font-family: var(--font-display);
+        font-size: clamp(5rem, 3rem + 14vw, 12rem);
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -.06em;
+        background: var(--gradient-brand);
+        background-size: 220% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: shimmer 7s linear infinite;
+      }
+      .nf h1 {
+        font-family: var(--font-display);
+        font-size: var(--fs-h2);
+        letter-spacing: -.03em;
+        margin-block: .75rem .8rem;
+      }
+      .nf p { color: var(--text-3); font-size: var(--fs-lg); max-width: 48ch; margin-inline: auto; }
+      .nf__actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-block-start: 2.25rem; }
+      .nf__brand { display: inline-flex; justify-content: center; margin-block-end: 1.5rem; }
+    </style>
+  </head>
+
+  <body>
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop__grid"></div>
+      <div class="backdrop__blob backdrop__blob--1"></div>
+      <div class="backdrop__blob backdrop__blob--2"></div>
+    </div>
+
+    <main class="nf">
+      <div>
+        <a class="brand nf__brand" href="/" aria-label="GonTI — início">
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <defs>
+              <linearGradient id="g-brand-404" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#5b4bf5" />
+                <stop offset="0.55" stop-color="#8b5cf6" />
+                <stop offset="1" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="13" fill="url(#g-brand-404)" />
+            <path d="M24 10.5A13.5 13.5 0 1 0 37.5 24H28.2" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="brand__text"><strong>GonTI</strong><small>Blip · Genesys · .NET</small></span>
+        </a>
+
+        <div class="nf__code">404</div>
+        <h1>Esta rota não existe</h1>
+        <p>
+          O endereço que você acessou foi movido ou nunca esteve aqui.
+          Sem problema — nossos deploys costumam ser mais certeiros que este link.
+        </p>
+
+        <div class="nf__actions">
+          <a class="btn btn--primary btn--lg" href="/">Voltar para o início</a>
+          <a class="btn btn--ghost btn--lg" href="mailto:victor@gonti.com.br">Falar com a gente</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

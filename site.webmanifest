@@ -1,0 +1,25 @@
+{
+  "name": "GonTI — Blip, Genesys Cloud e APIs em C#",
+  "short_name": "GonTI",
+  "description": "Chatbots em Blip e Genesys Cloud, voicebots e URA, e APIs backend em C#.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f6fb",
+  "theme_color": "#5b4bf5",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/images/GonTI_NoBG.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,235 +1,940 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="GonTI — Soluções em desenvolvimento de software. Especialistas em Chatbots, Voicebots e APIs Backend." />
-    <meta name="keywords" content="GonTI, chatbots, voicebots, APIs, backend, desenvolvimento de software" />
-    <meta name="theme-color" content="#6c5ce7" />
-    <link rel="icon" href="assets/images/GonTI_NoBG.png" sizes="192x192" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>GonTI — Especialistas em Blip, Genesys Cloud e APIs em C#</title>
+    <meta name="description" content="Chatbots em Blip e Genesys Cloud, voicebots e URA em Genesys, e APIs backend em C#/.NET para integrar tudo. Time certificado em Blip, Genesys Cloud Professional e C#." />
+    <meta name="keywords" content="GonTI, Blip, chatbot Blip, chatbot Genesys Cloud, Genesys Cloud, voicebot, URA, API C#, .NET, ASP.NET Core, integrações, certificação Genesys Cloud Professional, Belo Horizonte" />
+    <meta name="author" content="GonTI" />
+    <link rel="canonical" href="https://gonti.com.br/" />
+
+    <meta name="theme-color" content="#f7f8fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#080a12" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="GonTI" />
+    <meta property="og:url" content="https://gonti.com.br/" />
+    <meta property="og:title" content="GonTI — Especialistas em Blip, Genesys Cloud e APIs em C#" />
+    <meta property="og:description" content="Chatbots em Blip e Genesys Cloud, voicebots e URA em Genesys, e APIs backend em C#/.NET para integrar tudo. Time certificado." />
+    <meta property="og:image" content="https://gonti.com.br/assets/images/GonTI_NoBG.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="GonTI — Especialistas em Blip, Genesys Cloud e APIs em C#" />
+    <meta name="twitter:description" content="Chatbots em Blip e Genesys Cloud, voicebots e URA em Genesys, e APIs backend em C#/.NET para integrar tudo. Time certificado." />
+    <meta name="twitter:image" content="https://gonti.com.br/assets/images/GonTI_NoBG.png" />
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/GonTI_NoBG.png" sizes="any" />
+    <link rel="apple-touch-icon" href="assets/images/GonTI_NoBG.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Tema aplicado antes da pintura para evitar flash -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gonti.theme');
+          var dark = saved ? saved === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
-    </noscript>
-    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>GonTI | Soluções em Desenvolvimento de Software</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GonTI",
+      "alternateName": "Gontijo Tecnologia da Informação",
+      "url": "https://gonti.com.br/",
+      "logo": "https://gonti.com.br/assets/images/GonTI_NoBG.png",
+      "image": "https://gonti.com.br/assets/images/GonTI_NoBG.png",
+      "description": "Chatbots em Blip e Genesys Cloud, voicebots e URA em Genesys Cloud, e APIs backend em C#/.NET para integrações corporativas.",
+      "email": "victor@gonti.com.br",
+      "taxID": "60.794.533/0001-14",
+      "areaServed": "BR",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Sergipe, 1440 — Savassi",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      },
+      "knowsAbout": [
+        "Blip", "Genesys Cloud", "Chatbots", "Voicebots", "URA", "C#", ".NET",
+        "ASP.NET Core", "APIs REST", "Integrações corporativas", "Automação"
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Genesys Cloud: Professional Certification",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": { "@type": "Organization", "name": "Genesys" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certificação Blip",
+          "credentialCategory": "Professional Certification",
+          "recognizedBy": { "@type": "Organization", "name": "Blip" }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Certificação C#",
+          "credentialCategory": "Professional Certification"
+        }
+      ],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots em Blip" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbots, voicebots e URA em Genesys Cloud" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "APIs backend em C# e .NET" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Arquitetura de Integrações" } }
+      ]
+    }
+    </script>
   </head>
+
   <body>
-    <header class="nav" role="banner">
-      <div class="container nav__inner">
-        <a href="#inicio" class="brand" aria-label="GonTI">
-          <img 
-            class="brand__logo" 
-            src="assets/images/GonTI_NoBG.png" 
-            data-src-light="assets/images/GonTI_NoBG.png"
-            data-src-dark="assets/images/GonTI_NoBG_White.png"
-            alt="Logo GonTI" 
-            width="32" 
-            height="32" 
-          />
-          GonTI
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <!-- Fundo decorativo -->
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop__grid"></div>
+      <div class="backdrop__blob backdrop__blob--1"></div>
+      <div class="backdrop__blob backdrop__blob--2"></div>
+      <div class="backdrop__blob backdrop__blob--3"></div>
+    </div>
+
+    <div class="progress" aria-hidden="true"><span class="progress__bar" id="progress-bar"></span></div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a class="brand" href="#topo" aria-label="GonTI — início">
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-logo" /></svg>
+          <span class="brand__text">
+            <strong>GonTI</strong>
+            <small>Blip · Genesys · .NET</small>
+          </span>
         </a>
-        <script>
-          // Função para trocar os logos conforme o tema
-          (function() {
-            function updateLogos() {
-              // Atualiza o logo do header
-              var imgBrand = document.querySelector('.brand__logo');
-              if (imgBrand) {
-                var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                var srcBrand = isDark ? imgBrand.getAttribute('data-src-dark') : imgBrand.getAttribute('data-src-light');
-                if (imgBrand.src !== location.origin + '/' + srcBrand && imgBrand.src !== srcBrand) {
-                  imgBrand.src = srcBrand;
-                }
-              }
-              // Atualiza o logo do hero
-            //   var imgHero = document.querySelector('.hero__logo');
-            //   if (imgHero) {
-            //     var srcHero = isDark ? imgHero.getAttribute('data-src-dark') : imgHero.getAttribute('data-src-light');
-            //     if (imgHero.src !== location.origin + '/' + srcHero && imgHero.src !== srcHero) {
-            //       imgHero.src = srcHero;
-            //     }
-            //   }
-            }
 
-            // Atualiza ao carregar
-            document.addEventListener('DOMContentLoaded', updateLogos);
-
-            // Observa mudanças no atributo data-theme
-            var observer = new MutationObserver(updateLogos);
-            observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-            // Também atualiza ao trocar tema via JS (caso o script rode antes do DOMContentLoaded)
-            updateLogos();
-          })();
-        </script>
-        <nav class="nav__links" id="nav-links" aria-label="Navegação primária">
-          <a class="nav__link" href="#sobre">Sobre</a>
+        <nav class="nav" id="nav" aria-label="Navegação principal">
           <a class="nav__link" href="#servicos">Serviços</a>
-          <a class="nav__link" href="#contato">Contato</a>
+          <a class="nav__link" href="#plataformas">Plataformas</a>
+          <a class="nav__link" href="#certificacoes">Certificações</a>
+          <a class="nav__link" href="#processo">Processo</a>
+          <a class="nav__link" href="#sobre">Sobre</a>
+          <a class="nav__link" href="#faq">FAQ</a>
+          <a class="btn btn--primary btn--sm nav__cta" href="#contato">
+            Falar com a gente
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+          </a>
         </nav>
-        <div class="nav__actions">
-          <button class="btn-icon" data-action="toggle-theme" aria-label="Alternar tema" title="Tema claro/escuro">
-            <i data-feather="moon"></i>
+
+        <div class="header__actions">
+          <button class="icon-btn" type="button" data-action="toggle-theme" aria-label="Alternar tema claro e escuro" title="Alternar tema">
+            <svg class="icon icon--sun" aria-hidden="true"><use href="#i-sun" /></svg>
+            <svg class="icon icon--moon" aria-hidden="true"><use href="#i-moon" /></svg>
           </button>
-          <button class="btn-icon nav__toggle" data-action="toggle-menu" aria-label="Abrir/fechar menu">
-            <i data-feather="menu"></i>
+          <button class="icon-btn nav-toggle" type="button" data-action="toggle-menu" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+            <svg class="icon icon--menu" aria-hidden="true"><use href="#i-menu" /></svg>
+            <svg class="icon icon--close" aria-hidden="true"><use href="#i-x" /></svg>
           </button>
         </div>
       </div>
     </header>
 
-    <main id="inicio">
-      <!-- Hero -->
-      <section class="hero section">
-        <div class="container grid grid--2 hero__grid">
-          <div class="stack reveal">
-            <h1 class="hero__title">Transformando ideias em experiências digitais</h1>
-            <p class="hero__subtitle">Especialistas em Chatbots, Voicebots e APIs Backend para acelerar o crescimento do seu negócio com tecnologia de ponta.</p>
-            <div class="stack" style="grid-auto-rows: min-content; grid-row-gap: 12px;">
-              <a href="#contato" class="cta cta--primary" aria-label="Fale com a GonTI">
-                <i data-feather="message-circle"></i>
-                Fale com a gente
+    <main id="conteudo">
+      <span id="topo" class="anchor"></span>
+
+      <!-- ==================== HERO ==================== -->
+      <section class="hero">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <p class="eyebrow reveal">
+              <span class="eyebrow__dot"></span>
+              Certificados em Blip, Genesys Cloud e C#
+            </p>
+
+            <h1 class="hero__title reveal" data-reveal-delay="1">
+              Atendimento digital que
+              <span class="rotator" id="rotator" aria-live="polite">
+                <span class="rotator__text">resolve de verdade</span>
+              </span>
+            </h1>
+
+            <p class="hero__lead reveal" data-reveal-delay="2">
+              Construímos <strong>chatbots em Blip e Genesys Cloud</strong>, <strong>voicebots e URA</strong>
+              e as <strong>APIs em C#</strong> que ligam tudo isso aos seus sistemas. Texto ou voz, na
+              plataforma que fizer sentido para você — com o mesmo time do fluxo ao backend.
+            </p>
+
+            <div class="hero__actions reveal" data-reveal-delay="3">
+              <a class="btn btn--primary btn--lg" href="#contato">
+                <svg class="icon" aria-hidden="true"><use href="#i-send" /></svg>
+                Iniciar um projeto
               </a>
-              <div class="pill" aria-hidden="true">
-                <i data-feather="zap"></i>
-                Atendimento sob medida • Foco em resultados
-              </div>
+              <a class="btn btn--ghost btn--lg" href="#servicos">
+                Conhecer serviços
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </a>
             </div>
+
+            <ul class="hero__trust reveal" data-reveal-delay="4">
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Blip &amp; Genesys Cloud</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Backend C# / .NET</li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Código 100% seu</li>
+            </ul>
           </div>
-          <div class="hero__media reveal">
-            <div class="glass-card">
-              <img class="hero__logo" src="assets/images/GonTI_NoBG_White.png" alt="Marca GonTI" width="200" height="200" loading="lazy" />
+
+          <!-- Demo de chatbot -->
+          <div class="hero__demo reveal" data-reveal-delay="2">
+            <div class="device">
+              <div class="device__glow" aria-hidden="true"></div>
+              <div class="device__frame">
+                <div class="device__bar">
+                  <span class="device__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="device__title">
+                    <svg class="icon" aria-hidden="true"><use href="#i-message-circle" /></svg>
+                    Assistente GonTI
+                  </span>
+                  <span class="device__status"><i class="pulse"></i> online</span>
+                </div>
+                <div class="chat" id="chat" role="log" aria-label="Demonstração de conversa com assistente"></div>
+                <div class="device__input" aria-hidden="true">
+                  <span>Digite sua mensagem…</span>
+                  <span class="device__send"><svg class="icon" aria-hidden="true"><use href="#i-send" /></svg></span>
+                </div>
+              </div>
+
+              <div class="floaty floaty--1" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#i-zap" /></svg>
+                <span><strong>142 ms</strong><small>resposta média</small></span>
+              </div>
+              <div class="floaty floaty--2" aria-hidden="true">
+                <svg class="icon" aria-hidden="true"><use href="#i-git-branch" /></svg>
+                <span><strong>deploy ok</strong><small>CI/CD automatizado</small></span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Sobre -->
-      <section id="sobre" class="section section--alt">
+      <!-- ==================== MÉTRICAS ==================== -->
+      <section class="section section--tight" aria-label="Nossos compromissos técnicos">
         <div class="container">
-          <header class="section__header reveal">
-            <h2 class="section__title">Sobre a GonTI</h2>
-            <p class="section__subtitle">Criamos produtos e integrações que elevam a experiência do usuário e a eficiência operacional, com foco em qualidade, performance e escalabilidade.</p>
+          <div class="stats reveal">
+            <div class="stat">
+              <span class="stat__value" data-count="99.9" data-decimals="1" data-suffix="%">99,9%</span>
+              <span class="stat__label">Disponibilidade alvo em contrato</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" data-count="200" data-prefix="&lt;" data-suffix=" ms">&lt;200 ms</span>
+              <span class="stat__label">Orçamento de latência por endpoint</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">24/7</span>
+              <span class="stat__label">Atendimento automatizado que não dorme</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value" data-count="3">3</span>
+              <span class="stat__label">Certificações: Blip, Genesys Cloud Professional e C#</span>
+            </div>
+          </div>
+          <p class="stats__note reveal">
+            As certificações são reais e verificáveis. Disponibilidade e latência são os padrões de engenharia
+            que assumimos como meta contratual em cada projeto.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== SERVIÇOS ==================== -->
+      <section class="section" id="servicos">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Serviços</p>
+            <h2 class="section__title">Da conversa ao sistema de retaguarda,<br />com um time só</h2>
+            <p class="section__lead">
+              A maioria dos projetos de atendimento trava na fronteira entre a plataforma conversacional e o
+              backend. É exatamente aí que a gente atua — nos dois lados.
+            </p>
           </header>
-          <div class="grid grid--3 services__grid">
-            <article class="card reveal" aria-labelledby="val-1">
-              <h3 class="card__title" id="val-1"><i data-feather="shield"></i>Qualidade e Segurança</h3>
-              <p class="card__text">Processos maduros, testes, observabilidade e boas práticas de segurança desde o primeiro commit.</p>
+
+          <div class="bento">
+            <article class="card card--feature spotlight reveal">
+              <span class="card__badge">Carro-chefe</span>
+              <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-message-circle" /></svg></span>
+              <h3 class="card__title">Chatbots em Blip</h3>
+              <p class="card__text">
+                Somos certificados em <strong>Blip</strong> e construímos do fluxo ao conector: builder,
+                roteamento, filas de atendimento humano, base de conhecimento e disparo ativo. Publicamos em
+                WhatsApp Business API, web, Instagram e Teams com o mesmo tronco de lógica.
+              </p>
+              <p class="card__text">
+                Quando o bot precisa de dado real — pedido, fatura, agendamento, status de contrato — a extensão
+                em C# entra no fluxo e responde na mesma conversa, sem "aguarde que já retorno".
+              </p>
+              <ul class="tags">
+                <li>Blip Builder</li>
+                <li>WhatsApp Business API</li>
+                <li>Blip Desk</li>
+                <li>Handoff humano</li>
+                <li>Disparo ativo (HSM)</li>
+                <li>Analytics</li>
+              </ul>
             </article>
-            <article class="card reveal" aria-labelledby="val-2">
-              <h3 class="card__title" id="val-2"><i data-feather="activity"></i>Performance</h3>
-              <p class="card__text">Backends leves e eficientes, com latência reduzida e custos sob controle.</p>
+
+            <article class="card spotlight reveal" data-reveal-delay="1">
+              <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg></span>
+              <h3 class="card__title">Chatbot, Voicebot &amp; URA em Genesys Cloud</h3>
+              <p class="card__text">
+                <strong>Genesys Cloud Professional Certification</strong> na equipe. Atendimento por texto e por
+                voz no mesmo lugar: chatbot web e mensageria, voicebot com reconhecimento de fala, URA
+                inteligente, filas e roteamento por habilidade.
+              </p>
+              <ul class="tags">
+                <li>Architect Flows</li>
+                <li>Chatbot / Web Messaging</li>
+                <li>Voicebot</li>
+                <li>URA / IVR</li>
+                <li>Data Actions</li>
+                <li>Routing</li>
+              </ul>
             </article>
-            <article class="card reveal" aria-labelledby="val-3">
-              <h3 class="card__title" id="val-3"><i data-feather="users"></i>Parceria</h3>
-              <p class="card__text">Atuação próxima ao cliente, entregas iterativas e foco em impacto de negócio.</p>
+
+            <article class="card spotlight reveal" data-reveal-delay="2">
+              <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg></span>
+              <h3 class="card__title">APIs backend em C#</h3>
+              <p class="card__text">
+                Nossa base técnica. <strong>ASP.NET Core</strong> para toda a camada de integração: middlewares
+                entre bot e ERP/CRM, autenticação, cache, filas, resiliência e contrato documentado em OpenAPI.
+              </p>
+              <ul class="tags">
+                <li>ASP.NET Core</li>
+                <li>Entity Framework</li>
+                <li>REST &amp; Webhooks</li>
+                <li>SQL Server</li>
+                <li>Testes automatizados</li>
+              </ul>
+            </article>
+
+            <article class="card spotlight reveal" data-reveal-delay="3">
+              <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-sliders" /></svg></span>
+              <h3 class="card__title">Consultoria &amp; Arquitetura de Integrações</h3>
+              <p class="card__text">
+                Diagnóstico técnico honesto: onde está o gargalo do seu atendimento, o que dá para resolver na
+                própria plataforma e o que exige código. Também assumimos projetos de resgate — bots e URAs
+                herdados de outro fornecedor, sem documentação.
+              </p>
+              <ul class="tags">
+                <li>Diagnóstico de fluxo</li>
+                <li>Migração de plataforma</li>
+                <li>Projetos de resgate</li>
+                <li>Revisão de código</li>
+                <li>Mentoria de time</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Serviços -->
-      <section id="servicos" class="section">
+      <!-- ==================== PLATAFORMAS (3D) ==================== -->
+      <section class="section section--alt" id="plataformas">
         <div class="container">
-          <header class="section__header reveal">
-            <h2 class="section__title">Nossos Serviços</h2>
-            <p class="section__subtitle">Soluções sob medida para acelerar seus resultados.</p>
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Especialização</p>
+            <h2 class="section__title">Onde a gente é realmente fundo</h2>
+            <p class="section__lead">
+              Não somos generalistas de tudo. Somos profundos em três coisas que, juntas, entregam
+              uma operação de atendimento inteira.
+            </p>
           </header>
-          <div class="grid grid--3 services__grid">
-            <article class="card reveal">
-              <h3 class="card__title"><i data-feather="message-square"></i>Chatbots e Voicebots</h3>
-              <p class="card__text">Assistentes inteligentes para atendimento, suporte e automação de rotinas.</p>
-              <div class="feature-list" aria-label="Funcionalidades">
-                <span class="feature-list__item">24/7</span>
-                <span class="feature-list__item">NLU</span>
-                <span class="feature-list__item">Multicanal</span>
-                <span class="feature-list__item">Analytics</span>
+
+          <div class="platforms">
+            <!-- Painéis de detalhe (o ativo é trocado pelos controles) -->
+            <div class="platforms__panels">
+              <article class="platform is-active" data-panel="0">
+                <span class="platform__tag"><svg class="icon" aria-hidden="true"><use href="#i-message-circle" /></svg> Chatbot e mensageria</span>
+                <h3>Blip</h3>
+                <p>
+                  Nossa escolha quando o atendimento nasce no WhatsApp e nas redes. Dominamos o Builder de
+                  ponta a ponta: blocos e subfluxos reaproveitáveis, variáveis de contexto, roteamento
+                  inteligente para o Desk, base de conhecimento e campanhas ativas por HSM.
+                </p>
+                <ul class="platform__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Fluxos modulares que outra pessoa consegue manter</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Integração via extensão em C# quando o bot precisa de dado real</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Transbordo humano com contexto preservado</li>
+                </ul>
+              </article>
+
+              <article class="platform" data-panel="1">
+                <span class="platform__tag"><svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg> Contact center completo</span>
+                <h3>Genesys Cloud</h3>
+                <p>
+                  Texto e voz na mesma plataforma. Construímos <strong>chatbot</strong> para web e mensageria,
+                  <strong>voicebot</strong> com reconhecimento de fala e <strong>URA inteligente</strong> — tudo
+                  em Architect flows, com filas, roteamento por habilidade e Data Actions puxando informação
+                  dos seus sistemas em tempo real.
+                </p>
+                <ul class="platform__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Chatbot e voicebot compartilhando a mesma lógica de atendimento</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> URA que resolve, em vez de só distribuir ligação</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Data Actions e integrações via API própria</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Genesys Cloud: Professional Certification</li>
+                </ul>
+              </article>
+
+              <article class="platform" data-panel="2">
+                <span class="platform__tag"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg> Backend e integração</span>
+                <h3>C# &amp; .NET</h3>
+                <p>
+                  O músculo por trás das duas plataformas. ASP.NET Core para APIs de integração, middlewares,
+                  autenticação, cache, filas e resiliência — o código que transforma "o bot não sabe responder
+                  isso" em resposta imediata.
+                </p>
+                <ul class="platform__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> ASP.NET Core, Entity Framework e SQL Server</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Contratos documentados em OpenAPI</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Testes automatizados e pipeline de CI</li>
+                </ul>
+              </article>
+
+              <article class="platform" data-panel="3">
+                <span class="platform__tag"><svg class="icon" aria-hidden="true"><use href="#i-link" /></svg> O que amarra tudo</span>
+                <h3>Integrações</h3>
+                <p>
+                  A parte que costuma faltar. Ligamos Blip e Genesys Cloud ao seu ERP, CRM, base de clientes e
+                  gateways — tratando timeout, retry, idempotência e limite de taxa, para que a conversa nunca
+                  quebre por causa de um sistema lento do outro lado.
+                </p>
+                <ul class="platform__list">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> ERP, CRM, gateways e sistemas legados</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Resiliência: retry, circuit breaker, idempotência</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Logs e rastreabilidade ponta a ponta</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Cubo 3D -->
+            <div class="platforms__stage">
+              <div class="cube-stage">
+                <div class="cube" id="cube">
+                  <div class="cube__face" data-face="0">
+                    <svg class="icon" aria-hidden="true"><use href="#i-message-circle" /></svg>
+                    <strong>Blip</strong>
+                    <small>Chatbot</small>
+                  </div>
+                  <div class="cube__face" data-face="1">
+                    <svg class="icon" aria-hidden="true"><use href="#i-mic" /></svg>
+                    <strong>Genesys Cloud</strong>
+                    <small>Chatbot · Voz · URA</small>
+                  </div>
+                  <div class="cube__face" data-face="2">
+                    <svg class="icon" aria-hidden="true"><use href="#i-server" /></svg>
+                    <strong>C# / .NET</strong>
+                    <small>APIs backend</small>
+                  </div>
+                  <div class="cube__face" data-face="3">
+                    <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg>
+                    <strong>Integrações</strong>
+                    <small>ERP · CRM · Legados</small>
+                  </div>
+                  <div class="cube__cap cube__cap--top" aria-hidden="true"></div>
+                  <div class="cube__cap cube__cap--bottom" aria-hidden="true"></div>
+                </div>
+                <span class="cube__shadow" aria-hidden="true"></span>
+              </div>
+
+              <div class="cube__controls" role="tablist" aria-label="Escolher especialização">
+                <button class="cube__dot is-active" type="button" role="tab" aria-selected="true" data-face-btn="0">Blip</button>
+                <button class="cube__dot" type="button" role="tab" aria-selected="false" data-face-btn="1">Genesys</button>
+                <button class="cube__dot" type="button" role="tab" aria-selected="false" data-face-btn="2">C# / .NET</button>
+                <button class="cube__dot" type="button" role="tab" aria-selected="false" data-face-btn="3">Integrações</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CERTIFICAÇÕES ==================== -->
+      <section class="section" id="certificacoes">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Credenciais</p>
+            <h2 class="section__title">Certificados pelas plataformas que usamos</h2>
+            <p class="section__lead">
+              Certificação não substitui experiência — mas prova que o conhecimento foi validado por quem
+              fabrica a ferramenta, e não só pelo próprio portfólio.
+            </p>
+          </header>
+
+          <div class="certs">
+            <article class="cert tilt reveal">
+              <div class="cert__inner">
+                <span class="cert__seal"><svg class="icon" aria-hidden="true"><use href="#i-award" /></svg></span>
+                <p class="cert__issuer">Genesys</p>
+                <h3 class="cert__name">Genesys Cloud<br />Professional Certification</h3>
+                <p class="cert__desc">
+                  Credencial de nível profissional em Genesys Cloud, cobrindo Architect flows, roteamento,
+                  administração da plataforma e integrações.
+                </p>
+                <span class="cert__badge"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Professional</span>
               </div>
             </article>
-            <article class="card reveal">
-              <h3 class="card__title"><i data-feather="server"></i>APIs Backend</h3>
-              <p class="card__text">Integrações robustas e escaláveis, com documentação clara e segurança por padrão.</p>
-              <div class="feature-list">
-                <span class="feature-list__item">Alta performance</span>
-                <span class="feature-list__item">Escalabilidade</span>
-                <span class="feature-list__item">Observabilidade</span>
-                <span class="feature-list__item">Segurança</span>
+
+            <article class="cert tilt reveal" data-reveal-delay="1">
+              <div class="cert__inner">
+                <span class="cert__seal"><svg class="icon" aria-hidden="true"><use href="#i-message-circle" /></svg></span>
+                <p class="cert__issuer">Blip</p>
+                <h3 class="cert__name">Certificação Blip</h3>
+                <p class="cert__desc">
+                  Construção de chatbots na plataforma Blip: Builder, roteamento, Desk, canais e extensões
+                  para integração com sistemas externos.
+                </p>
+                <span class="cert__badge"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Certificado</span>
               </div>
             </article>
-            <article class="card reveal">
-              <h3 class="card__title"><i data-feather="sliders"></i>Consultoria Técnica</h3>
-              <p class="card__text">Diagnóstico, arquitetura, otimizações e apoio na adoção de boas práticas.</p>
-              <div class="feature-list">
-                <span class="feature-list__item">Arquitetura</span>
-                <span class="feature-list__item">Cloud</span>
-                <span class="feature-list__item">DevOps</span>
-                <span class="feature-list__item">Treinamentos</span>
+
+            <article class="cert tilt reveal" data-reveal-delay="2">
+              <div class="cert__inner">
+                <span class="cert__seal"><svg class="icon" aria-hidden="true"><use href="#i-code" /></svg></span>
+                <p class="cert__issuer">C# / .NET</p>
+                <h3 class="cert__name">Certificação em C#</h3>
+                <p class="cert__desc">
+                  Linguagem e ecossistema .NET aplicados a APIs, integrações e serviços de retaguarda —
+                  a base de tudo que construímos por trás dos bots.
+                </p>
+                <span class="cert__badge"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg> Certificado</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Contato -->
-      <section id="contato" class="section section--alt contact">
+      <!-- ==================== PROCESSO ==================== -->
+      <section class="section section--alt" id="processo">
         <div class="container">
-          <header class="section__header reveal">
-            <h2 class="section__title">Entre em Contato</h2>
-            <p class="section__subtitle">Vamos tirar sua ideia do papel? Fale com a gente.</p>
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Como trabalhamos</p>
+            <h2 class="section__title">Do primeiro café ao deploy em produção</h2>
+            <p class="section__lead">
+              Um processo curto e transparente. Você acompanha cada etapa — sem caixa-preta e sem surpresa no fim.
+            </p>
           </header>
-          <div class="contact__items">
-            <div class="contact-item reveal" role="group" aria-label="Contato por e-mail">
-              <i data-feather="mail"></i>
-              <div>
-                <div class="contact-item__label">E-mail</div>
-                <div class="contact-item__value"><a href="mailto:victor@gonti.com.br">victor@gonti.com.br</a></div>
+
+          <ol class="steps">
+            <li class="step reveal">
+              <span class="step__num">01</span>
+              <div class="step__body">
+                <h3 class="step__title"><svg class="icon" aria-hidden="true"><use href="#i-headphones" /></svg> Descoberta</h3>
+                <p>Conversa de 45 minutos para entender o problema, o contexto e o que "pronto" significa para você.
+                   Saímos com escopo, riscos e uma estimativa realista.</p>
+              </div>
+            </li>
+            <li class="step reveal" data-reveal-delay="1">
+              <span class="step__num">02</span>
+              <div class="step__body">
+                <h3 class="step__title"><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg> Arquitetura</h3>
+                <p>Desenhamos a solução antes de escrever a primeira linha: fluxos, contratos de API, integrações,
+                   custos de infraestrutura e plano de segurança.</p>
+              </div>
+            </li>
+            <li class="step reveal" data-reveal-delay="2">
+              <span class="step__num">03</span>
+              <div class="step__body">
+                <h3 class="step__title"><svg class="icon" aria-hidden="true"><use href="#i-code" /></svg> Construção</h3>
+                <p>Ciclos quinzenais com entrega funcional em ambiente de homologação. Testes automatizados,
+                   revisão de código e CI/CD desde o dia um.</p>
+              </div>
+            </li>
+            <li class="step reveal" data-reveal-delay="3">
+              <span class="step__num">04</span>
+              <div class="step__body">
+                <h3 class="step__title"><svg class="icon" aria-hidden="true"><use href="#i-trending-up" /></svg> Operação &amp; evolução</h3>
+                <p>Deploy assistido, monitoramento, alertas e métricas de negócio. Depois, evoluímos com base
+                   em dado — não em achismo.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ==================== STACK ==================== -->
+      <section class="section" id="stack">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Tecnologia</p>
+            <h2 class="section__title">Ferramenta certa para o problema certo</h2>
+            <p class="section__lead">
+              Nenhuma tecnologia é sagrada. Escolhemos pelo que o seu projeto precisa sustentar nos próximos anos.
+            </p>
+          </header>
+        </div>
+
+        <div class="marquee reveal" aria-label="Tecnologias que utilizamos">
+          <div class="marquee__track">
+            <ul class="marquee__group">
+              <li class="is-core">Blip</li><li class="is-core">Genesys Cloud</li><li class="is-core">C#</li>
+              <li class="is-core">.NET</li><li>ASP.NET Core</li><li>Entity Framework</li>
+              <li>SQL Server</li><li>REST &amp; Webhooks</li><li>OpenAPI</li>
+              <li>WhatsApp Business API</li><li>Architect Flows</li><li>Blip Builder</li>
+              <li>Azure</li><li>Docker</li><li>Git &amp; CI/CD</li><li>xUnit</li>
+            </ul>
+            <ul class="marquee__group" aria-hidden="true">
+              <li class="is-core">Blip</li><li class="is-core">Genesys Cloud</li><li class="is-core">C#</li>
+              <li class="is-core">.NET</li><li>ASP.NET Core</li><li>Entity Framework</li>
+              <li>SQL Server</li><li>REST &amp; Webhooks</li><li>OpenAPI</li>
+              <li>WhatsApp Business API</li><li>Architect Flows</li><li>Blip Builder</li>
+              <li>Azure</li><li>Docker</li><li>Git &amp; CI/CD</li><li>xUnit</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="pillars">
+            <div class="pillar reveal">
+              <svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg>
+              <h3>Segurança por padrão</h3>
+              <p>Segredos fora do código, criptografia em trânsito e em repouso, princípio do menor privilégio e trilha de auditoria. Em fluxo de atendimento isso é obrigatório: passa dado pessoal o tempo todo. LGPD como requisito, não como checklist.</p>
+            </div>
+            <div class="pillar reveal" data-reveal-delay="1">
+              <svg class="icon" aria-hidden="true"><use href="#i-activity" /></svg>
+              <h3>Observabilidade da conversa</h3>
+              <p>Não basta a API responder: dá para saber em que bloco o cliente desistiu, qual integração demorou e qual intenção não foi reconhecida. Logs estruturados e rastreabilidade do primeiro "oi" até o sistema de retaguarda.</p>
+            </div>
+            <div class="pillar reveal" data-reveal-delay="2">
+              <svg class="icon" aria-hidden="true"><use href="#i-database" /></svg>
+              <h3>Resiliência nas bordas</h3>
+              <p>Sistema legado cai, ERP fica lento, API de terceiro estoura o limite. Timeout, retry com recuo, circuit breaker e idempotência para que a conversa degrade com elegância em vez de travar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== SOBRE ==================== -->
+      <section class="section section--alt" id="sobre">
+        <div class="container about">
+          <div class="about__copy reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Sobre a GonTI</p>
+            <h2 class="section__title">Quem fala com você é quem escreve o código</h2>
+            <p>
+              A GonTI nasceu de uma inconformidade simples: projeto de atendimento digital não deveria ser
+              uma aposta. Trabalhamos com time pequeno e sênior, falando diretamente com quem decide — o que
+              elimina ruído, encurta ciclo e faz o orçamento render.
+            </p>
+            <p>
+              Nossa diferença está na sobreposição rara entre <strong>plataforma conversacional</strong> e
+              <strong>backend</strong>. A maioria dos fornecedores domina um lado só: ou monta o fluxo no Blip
+              e no Genesys e trava quando precisa de integração, ou escreve API sem entender como a conversa
+              se comporta. Fazendo os dois, o problema não tem para onde ser empurrado.
+            </p>
+
+            <div class="about__values">
+              <div class="value">
+                <svg class="icon" aria-hidden="true"><use href="#i-award" /></svg>
+                <div><strong>Conhecimento validado</strong><span>Certificações em Blip, Genesys Cloud Professional e C#.</span></div>
+              </div>
+              <div class="value">
+                <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg>
+                <div><strong>Ponta a ponta</strong><span>Do fluxo conversacional à API que consulta seu ERP.</span></div>
+              </div>
+              <div class="value">
+                <svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>
+                <div><strong>Parceria de longo prazo</strong><span>Ficamos junto depois do go-live, não só até ele.</span></div>
               </div>
             </div>
-            <div class="contact-item reveal" role="group" aria-label="Endereço">
-              <i data-feather="map-pin"></i>
-              <div>
-                <div class="contact-item__label">Endereço</div>
-                <div class="contact-item__value">WeWork Sala Comercial & Coworking</div>
-                <div class="contact-item__value">Rua Sergipe, 1440 - Savassi</div>
-                <div class="contact-item__value">Belo Horizonte - MG</div>
+          </div>
+
+          <aside class="about__panel reveal" data-reveal-delay="1">
+            <div class="terminal">
+              <div class="terminal__bar" aria-hidden="true">
+                <span class="device__dots"><i></i><i></i><i></i></span>
+                <span>gonti — deploy.sh</span>
               </div>
+              <pre class="terminal__body"><code><span class="c-dim">$</span> <span class="c-cmd">dotnet</span> test ./Gonti.Integrations.sln
+<span class="c-ok">✓</span> Gonti.Blip.Tests            <span class="c-dim">48 passed</span>
+<span class="c-ok">✓</span> Gonti.Genesys.Tests         <span class="c-dim">37 passed</span>
+<span class="c-ok">✓</span> Gonti.Erp.Connector.Tests   <span class="c-dim">43 passed</span>
+
+<span class="c-dim">$</span> <span class="c-cmd">dotnet</span> publish -c Release
+<span class="c-ok">✓</span> análise estática            <span class="c-dim">0 warnings</span>
+<span class="c-ok">✓</span> scan de dependências        <span class="c-dim">2.4s</span>
+<span class="c-arrow">→</span> rollout canário 10% … 50% … 100%
+<span class="c-ok">✓</span> health checks               <span class="c-dim">200 OK</span>
+
+<span class="c-accent">deploy concluído</span> — zero downtime <span class="cursor"></span></code></pre>
             </div>
-            <div class="contact-item reveal" role="group" aria-label="Dados da empresa">
-              <i data-feather="briefcase"></i>
-              <div>
-                <div class="contact-item__label">CNPJ</div>
-                <div class="contact-item__value">60.794.533/0001-14</div>
-                <div class="contact-item__value">GonTI</div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================== CTA ==================== -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-band reveal">
+            <div class="cta-band__glow" aria-hidden="true"></div>
+            <h2>Seu bot para na hora de consultar o sistema?</h2>
+            <p>Esse é exatamente o problema que resolvemos. Conte em duas linhas o que trava hoje — respondemos
+               com um caminho técnico, sem custo e sem compromisso.</p>
+            <div class="cta-band__actions">
+              <a class="btn btn--light btn--lg" href="mailto:victor@gonti.com.br?subject=Quero%20conversar%20sobre%20um%20projeto">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                victor@gonti.com.br
+              </a>
+              <a class="btn btn--outline btn--lg" href="#contato">
+                Ver todos os contatos
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== FAQ ==================== -->
+      <section class="section" id="faq">
+        <div class="container container--narrow">
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Perguntas frequentes</p>
+            <h2 class="section__title">O que costumam nos perguntar</h2>
+          </header>
+
+          <div class="faq">
+            <details class="faq__item reveal" name="faq">
+              <summary>Vocês atendem empresas de qualquer porte?</summary>
+              <div class="faq__answer">
+                <p>Sim. Trabalhamos tanto com startups validando um primeiro produto quanto com empresas
+                consolidadas que precisam modernizar integrações. O que muda é o formato do contrato e o ritmo
+                das entregas — não o padrão de engenharia.</p>
               </div>
-            </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Quanto tempo leva um projeto?</summary>
+              <div class="faq__answer">
+                <p>Um chatbot em Blip com integrações simples costuma ir ao ar em poucas semanas. Uma URA em
+                Genesys Cloud com roteamento e consulta a sistemas de retaguarda leva mais, e é fatiada em
+                entregas quinzenais para que o valor comece a aparecer antes de o escopo terminar. Na conversa
+                de descoberta já saímos com uma estimativa realista.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Já temos Blip ou Genesys Cloud rodando. Vocês assumem?</summary>
+              <div class="faq__answer">
+                <p>Sim — é boa parte do que fazemos. Começamos com um mapeamento do que existe: fluxos publicados,
+                integrações ativas, pontos de transbordo e o que está quebrado ou órfão. Você recebe esse
+                diagnóstico documentado mesmo que decida não seguir com a gente. Projetos herdados sem
+                documentação são cenário comum, não exceção.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Vocês vendem a licença do Blip ou do Genesys?</summary>
+              <div class="faq__answer">
+                <p>Não. A licença é contratada por você diretamente com a plataforma, e isso é intencional: o
+                ambiente fica no seu nome, com seus acessos e seus dados. Nós entramos como time de engenharia
+                dentro do seu tenant. Se ainda não escolheu a plataforma, ajudamos a comparar — inclusive para
+                dizer quando nenhuma das duas é necessária.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Como funciona a cobrança?</summary>
+              <div class="faq__answer">
+                <p>Dois formatos: <strong>escopo fechado</strong>, quando o problema está bem definido, ou
+                <strong>alocação por período</strong>, quando o produto ainda vai evoluir e você quer flexibilidade.
+                Em ambos, o combinado é escrito e as entregas são verificáveis.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>O código fica comigo?</summary>
+              <div class="faq__answer">
+                <p>Sempre. Trabalhamos no seu repositório ou transferimos a propriedade na entrega, junto com
+                documentação, variáveis de ambiente e instruções de operação. Nosso objetivo é a sua autonomia.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Vocês dão suporte depois de entregar?</summary>
+              <div class="faq__answer">
+                <p>Sim, com contrato de sustentação opcional: monitoramento, correções, atualizações de segurança
+                e uma reserva mensal de horas para evoluções. Você também pode assumir tudo internamente — deixamos
+                o time preparado para isso.</p>
+              </div>
+            </details>
+
+            <details class="faq__item reveal" name="faq">
+              <summary>Usam IA em tudo?</summary>
+              <div class="faq__answer">
+                <p>Não. IA entra quando resolve melhor que uma regra — atendimento aberto, busca em base de
+                conhecimento, extração de documentos. Onde previsibilidade importa mais (cálculo, cobrança,
+                compliance), usamos lógica determinística. Ser honesto sobre isso evita produto caro e instável.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== CONTATO ==================== -->
+      <section class="section section--alt" id="contato">
+        <div class="container">
+          <header class="section__head reveal">
+            <p class="eyebrow"><span class="eyebrow__dot"></span> Contato</p>
+            <h2 class="section__title">Vamos tirar sua ideia do papel</h2>
+            <p class="section__lead">
+              Escolha o canal que preferir. Costumamos responder no mesmo dia útil.
+            </p>
+          </header>
+
+          <div class="contacts">
+            <article class="contact spotlight reveal">
+              <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></span>
+              <h3 class="contact__label">E-mail</h3>
+              <a class="contact__value" href="mailto:victor@gonti.com.br">victor@gonti.com.br</a>
+              <button class="copy" type="button" data-copy="victor@gonti.com.br" aria-label="Copiar e-mail">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                <span>Copiar</span>
+              </button>
+            </article>
+
+            <article class="contact spotlight reveal" data-reveal-delay="1">
+              <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-map-pin" /></svg></span>
+              <h3 class="contact__label">Escritório</h3>
+              <address class="contact__value contact__value--plain">
+                WeWork — Rua Sergipe, 1440<br />
+                Savassi · Belo Horizonte — MG
+              </address>
+              <a class="copy" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Sergipe+1440+Savassi+Belo+Horizonte" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>
+                <span>Abrir no mapa</span>
+              </a>
+            </article>
+
+            <article class="contact spotlight reveal" data-reveal-delay="2">
+              <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-briefcase" /></svg></span>
+              <h3 class="contact__label">Dados da empresa</h3>
+              <p class="contact__value contact__value--plain">
+                GonTI<br />
+                CNPJ 60.794.533/0001-14
+              </p>
+              <button class="copy" type="button" data-copy="60.794.533/0001-14" aria-label="Copiar CNPJ">
+                <svg class="icon" aria-hidden="true"><use href="#i-copy" /></svg>
+                <span>Copiar CNPJ</span>
+              </button>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
-      <div class="container footer__inner">
-        <span class="footer__brand">
-          <img class="footer__logo" src="assets/images/GonTI_NoBG_White.png" alt="Logo GonTI" width="24" height="24" />
-          GonTI — Soluções em Desenvolvimento de Software
-        </span>
-        <span class="footer__meta">© <span id="year"></span> GonTI. Todos os direitos reservados.</span>
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div class="footer__brand">
+          <a class="brand" href="#topo" aria-label="GonTI — início">
+            <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-logo" /></svg>
+            <span class="brand__text"><strong>GonTI</strong><small>Blip · Genesys · .NET</small></span>
+          </a>
+          <p>Chatbots em Blip e Genesys Cloud, voicebots e URA, APIs em C#. Belo Horizonte — MG, atendendo todo o Brasil.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Serviços">
+          <h3>Serviços</h3>
+          <a href="#servicos">Chatbots em Blip</a>
+          <a href="#servicos">Chatbot &amp; Voz em Genesys</a>
+          <a href="#servicos">APIs backend em C#</a>
+          <a href="#servicos">Consultoria &amp; Integrações</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Empresa">
+          <h3>Empresa</h3>
+          <a href="#plataformas">Plataformas</a>
+          <a href="#certificacoes">Certificações</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#processo">Processo</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+
+        <div class="footer__col">
+          <h3>Contato</h3>
+          <a href="mailto:victor@gonti.com.br">victor@gonti.com.br</a>
+          <a href="https://github.com/hugoxy" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span class="footer__muted">Rua Sergipe, 1440 — Savassi<br />Belo Horizonte — MG</span>
+        </div>
+      </div>
+
+      <div class="container footer__bottom">
+        <span>© <span id="year">2026</span> GonTI · CNPJ 60.794.533/0001-14 · Todos os direitos reservados.</span>
+        <span class="footer__made">Feito com engenharia — e um pouco de café.</span>
       </div>
     </footer>
 
-    <!-- Dependências leves -->
-    <script src="https://unpkg.com/feather-icons" defer></script>
-    <script>
-      // ano dinâmico sem bloquear render
-      document.addEventListener('DOMContentLoaded', function(){
-        var y = document.getElementById('year');
-        if (y) y.textContent = new Date().getFullYear();
-      });
-    </script>
+    <button class="to-top" type="button" data-action="to-top" aria-label="Voltar ao topo" title="Voltar ao topo">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+    </button>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- ==================== SPRITE DE ÍCONES ==================== -->
+    <!-- `display:none` quebraria o gradiente do logo quando referenciado via <use>;
+         por isso o sprite é ocultado por dimensão zero, não por display. -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5b4bf5" />
+          <stop offset="0.55" stop-color="#8b5cf6" />
+          <stop offset="1" stop-color="#06b6d4" />
+        </linearGradient>
+      </defs>
+      <symbol id="i-logo" viewBox="0 0 48 48">
+        <rect width="48" height="48" rx="13" fill="url(#g-brand)" />
+        <path d="M24 10.5A13.5 13.5 0 1 0 37.5 24H28.2" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/><line x1="4.2" y1="4.2" x2="5.9" y2="5.9"/><line x1="18.1" y1="18.1" x2="19.8" y2="19.8"/><line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/><line x1="4.2" y1="19.8" x2="5.9" y2="18.1"/><line x1="18.1" y1="5.9" x2="19.8" y2="4.2"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+      <symbol id="i-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+      <symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 6.5 12 13.5 2 6.5"/></symbol>
+      <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+      <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+      <symbol id="i-git-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-headphones" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></symbol>
+    </svg>
+
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
